@@ -70,18 +70,30 @@
       <h2 class="section-title">Tambah Task Baru</h2>
       <div class="form-card">
         <div class="form-row">
-          <input type="text" id="input-title" class="input-text" placeholder="✏️  Nama task..." maxlength="100" />
+          <div class="input-group">
+            <label for="input-title" class="input-label">Nama Task</label>
+            <input type="text" id="input-title" class="input-text" placeholder="✏️  Nama task..." maxlength="100" />
+          </div>
         </div>
         <div class="form-row form-row-2">
-          <select id="input-priority" class="input-select">
-            <option value="High">🔴  High</option>
-            <option value="Medium" selected>🟡  Medium</option>
-            <option value="Low">🟢  Low</option>
-          </select>
-          <input type="date" id="input-date" class="input-text" />
+          <div class="input-group">
+            <label for="input-priority" class="input-label">Prioritas</label>
+            <select id="input-priority" class="input-select">
+              <option value="High">🔴  High</option>
+              <option value="Medium" selected>🟡  Medium</option>
+              <option value="Low">🟢  Low</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="input-date" class="input-label">Tenggat Waktu</label>
+            <input type="date" id="input-date" class="input-text" />
+          </div>
         </div>
         <div class="form-row">
-          <textarea id="input-desc" class="input-textarea" placeholder="📝  Deskripsi (opsional)..." rows="2" maxlength="300"></textarea>
+          <div class="input-group">
+            <label for="input-desc" class="input-label">Deskripsi <span class="label-optional">(opsional)</span></label>
+            <textarea id="input-desc" class="input-textarea" placeholder="📝  Tulis deskripsi task..." rows="2" maxlength="300"></textarea>
+          </div>
         </div>
         <button class="btn-add" id="btn-add" onclick="addTask()">+ Tambah Task</button>
       </div>
@@ -116,18 +128,30 @@
       <h3 class="modal-title">✏️ Edit Task</h3>
       <input type="hidden" id="edit-id" />
       <div class="form-row">
-        <input type="text" id="edit-title" class="input-text" placeholder="Nama task..." maxlength="100" />
+        <div class="input-group">
+          <label for="edit-title" class="input-label">Nama Task</label>
+          <input type="text" id="edit-title" class="input-text" placeholder="Nama task..." maxlength="100" />
+        </div>
       </div>
       <div class="form-row form-row-2">
-        <select id="edit-priority" class="input-select">
-          <option value="High">🔴  High</option>
-          <option value="Medium">🟡  Medium</option>
-          <option value="Low">🟢  Low</option>
-        </select>
-        <input type="date" id="edit-date" class="input-text" />
+        <div class="input-group">
+          <label for="edit-priority" class="input-label">Prioritas</label>
+          <select id="edit-priority" class="input-select">
+            <option value="High">🔴  High</option>
+            <option value="Medium">🟡  Medium</option>
+            <option value="Low">🟢  Low</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="edit-date" class="input-label">Tenggat Waktu</label>
+          <input type="date" id="edit-date" class="input-text" />
+        </div>
       </div>
       <div class="form-row">
-        <textarea id="edit-desc" class="input-textarea" placeholder="Deskripsi..." rows="2" maxlength="300"></textarea>
+        <div class="input-group">
+          <label for="edit-desc" class="input-label">Deskripsi <span class="label-optional">(opsional)</span></label>
+          <textarea id="edit-desc" class="input-textarea" placeholder="Deskripsi..." rows="2" maxlength="300"></textarea>
+        </div>
       </div>
       <div class="modal-actions">
         <button class="btn-cancel" onclick="closeModal()">Batal</button>
