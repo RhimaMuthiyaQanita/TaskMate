@@ -2,8 +2,7 @@
 
 Aplikasi web manajemen task harian berbasis HTML, CSS, dan JavaScript vanilla.
 
-**Link Web:** [https://taskmate-[username].vercel.app](https://taskmate-[username].vercel.app)  
-**Source Code:** [https://github.com/[username]/taskmate](https://github.com/[username]/taskmate)
+**Link Web:** [[https://taskmate-[username].vercel.app](https://taskmate-[username].vercel.app)  ](https://task-mate-blond.vercel.app/)
 
 ---
 
