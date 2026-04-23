@@ -15,7 +15,7 @@
   --surface-2: #F7F5FF;
   --border: #E4E1F7;
   --text-main: #1A1635;
-  --text-muted: #7B7AA0;
+  --text-muted: #595880;
   --shadow-sm: 0 1px 6px rgba(100,90,220,0.08);
   --shadow: 0 4px 20px rgba(100,90,220,0.13);
   --shadow-lg: 0 8px 40px rgba(100,90,220,0.18);
@@ -39,7 +39,7 @@
   --surface-2: #221F3A;
   --border: #2E2B4A;
   --text-main: #F0EFFE;
-  --text-muted: #8F8DB5;
+  --text-muted: #A8A6CC;
   --shadow-sm: 0 1px 6px rgba(0,0,0,0.3);
   --shadow: 0 4px 20px rgba(0,0,0,0.4);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.55);
@@ -227,6 +227,21 @@ main {
 
 .form-row { display: flex; gap: 0.8rem; }
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; }
+
+.input-group { display: flex; flex-direction: column; gap: 5px; width: 100%; }
+
+.input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4A4870;
+}
+[data-theme="dark"] .input-label { color: #B8B6D9; }
+
+.label-optional {
+  font-weight: 400;
+  color: #7B7AA0;
+  font-size: 12px;
+}
 
 .input-text, .input-select, .input-textarea {
   width: 100%;
