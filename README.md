@@ -84,9 +84,7 @@ Diuji menggunakan **Google Lighthouse** (Desktop mode).
 |----|---------|---------|--------|--------|
 | C-01 | Google Chrome | Normal | Semua fitur berjalan | ✅ Pass |
 | C-02 | Microsoft Edge | Normal | Semua fitur berjalan | ✅ Pass |
-| C-03 | Mozilla Firefox | - | - | ⚠️ Tidak diuji (tidak terinstall) |
-| C-04 | Safari | - | - | ⚠️ N/A (Windows) |
-| C-05 | Chrome Mobile (Android) | - | - | ⏳ Diuji setelah deploy Vercel |
+| C-03 | Chrome Mobile (Android) | - | - | ⏳ Diuji setelah deploy Vercel |
 
 ### 5. Security (Keamanan Input)
 
@@ -112,4 +110,4 @@ taskmate/
 
 ## Developer
 
-Dibuat sebagai proyek Daily Project 7 — mata kuliah Rekayasa Perangkat Lunak.
+Dibuat sebagai proyek Daily Project 7 — mata kuliah Rekayasa Kebutuhan.
