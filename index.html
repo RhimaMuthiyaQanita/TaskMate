@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskMate – Kelola Tugasmu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">✓</div>
+        <span class="logo-text">TaskMate</span>
+      </div>
+      <div class="header-right">
+        <div class="header-stats">
+          <span id="stat-total">0 Task</span>
+          <span class="divider">|</span>
+          <span id="stat-done">0 Selesai</span>
+        </div>
+        <div class="dark-toggle" id="dark-toggle" onclick="toggleDark()" title="Toggle dark mode">
+          <div class="dark-toggle-inner" id="toggle-icon">☀️</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- RINGKASAN -->
+    <section class="section-summary">
+      <h2 class="section-title">Ringkasan Hari Ini</h2>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <span class="summary-icon">📋</span>
+          <span class="summary-num" id="s-total">0</span>
+          <span class="summary-label">Total Task</span>
+        </div>
+        <div class="summary-card card-green">
+          <span class="summary-icon">✅</span>
+          <span class="summary-num" id="s-done">0</span>
+          <span class="summary-label">Selesai</span>
+        </div>
+        <div class="summary-card card-orange">
+          <span class="summary-icon">⏳</span>
+          <span class="summary-num" id="s-pending">0</span>
+          <span class="summary-label">Belum Selesai</span>
+        </div>
+        <div class="summary-card card-red">
+          <span class="summary-icon">🔥</span>
+          <span class="summary-num" id="s-high">0</span>
+          <span class="summary-label">Prioritas Tinggi</span>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Progress Keseluruhan</span>
+          <span id="progress-pct">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section-form">
+      <h2 class="section-title">Tambah Task Baru</h2>
+      <div class="form-card">
+        <div class="form-row">
+          <input type="text" id="input-title" class="input-text" placeholder="✏️  Nama task..." maxlength="100" />
+        </div>
+        <div class="form-row form-row-2">
+          <select id="input-priority" class="input-select">
+            <option value="High">🔴  High</option>
+            <option value="Medium" selected>🟡  Medium</option>
+            <option value="Low">🟢  Low</option>
+          </select>
+          <input type="date" id="input-date" class="input-text" />
+        </div>
+        <div class="form-row">
+          <textarea id="input-desc" class="input-textarea" placeholder="📝  Deskripsi (opsional)..." rows="2" maxlength="300"></textarea>
+        </div>
+        <button class="btn-add" id="btn-add" onclick="addTask()">+ Tambah Task</button>
+      </div>
+    </section>
+
+    <!-- TASK LIST -->
+    <section class="section-tasks">
+      <div class="tasks-header">
+        <h2 class="section-title">Daftar Task</h2>
+        <div class="filter-wrap">
+          <button class="filter-btn active" onclick="setFilter(this,'all')">Semua</button>
+          <button class="filter-btn" onclick="setFilter(this,'pending')">Belum</button>
+          <button class="filter-btn" onclick="setFilter(this,'done')">Selesai</button>
+          <button class="filter-btn filter-high" onclick="setFilter(this,'High')">🔴 High</button>
+          <button class="filter-btn filter-med"  onclick="setFilter(this,'Medium')">🟡 Medium</button>
+          <button class="filter-btn filter-low"  onclick="setFilter(this,'Low')">🟢 Low</button>
+        </div>
+      </div>
+      <div id="task-list" class="task-list"></div>
+      <div id="empty-msg" class="empty-msg">
+        <div class="empty-icon">🗂️</div>
+        <strong>Belum ada task</strong>
+        <span>Tambahkan task pertamamu di atas!</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL EDIT -->
+  <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <h3 class="modal-title">✏️ Edit Task</h3>
+      <input type="hidden" id="edit-id" />
+      <div class="form-row">
+        <input type="text" id="edit-title" class="input-text" placeholder="Nama task..." maxlength="100" />
+      </div>
+      <div class="form-row form-row-2">
+        <select id="edit-priority" class="input-select">
+          <option value="High">🔴  High</option>
+          <option value="Medium">🟡  Medium</option>
+          <option value="Low">🟢  Low</option>
+        </select>
+        <input type="date" id="edit-date" class="input-text" />
+      </div>
+      <div class="form-row">
+        <textarea id="edit-desc" class="input-textarea" placeholder="Deskripsi..." rows="2" maxlength="300"></textarea>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Batal</button>
+        <button class="btn-save" onclick="saveEdit()">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
