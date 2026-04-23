@@ -29,7 +29,7 @@ Aplikasi web manajemen task harian berbasis HTML, CSS, dan JavaScript vanilla.
 
 ```bash
 # Clone repository
-git clone https://github.com/[username]/taskmate.git
+gh repo clone RhimaMuthiyaQanita/TaskMate
 
 # Masuk folder
 cd taskmate
